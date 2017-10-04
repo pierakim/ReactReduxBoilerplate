@@ -10,12 +10,14 @@ import { createStore } from 'redux'
 import App from './components/App'; //we define it
 import HomePage from './components/home/HomePage'; //we define it
 import AboutPage from './components/about/AboutPage'; //we define it
+import TodosPage from './components/todos/todosPage'; //we define it
 
 import '../styles/styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const history = createBrowserHistory();
-const store =  createStore(state => state);
+//const store =  createStore(state => state);
+const store = configureStore();
 
 render(
     <Provider store={store}>
@@ -23,6 +25,7 @@ render(
             <App>
                 <Route exact={true} path="/" component={HomePage} />
                 <Route path="/about" component={AboutPage} />
+                <Route path="/todos" component={TodosPage} />
             </App>
         </Router>
     </Provider>,

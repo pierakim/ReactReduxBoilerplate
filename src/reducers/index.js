@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
 
+import todos from './todosReducer';
+
 const rootReducer = combineReducers({
     //shorthand property name here
-    //reducer01
+    todos
     //reducer02
 });
 
