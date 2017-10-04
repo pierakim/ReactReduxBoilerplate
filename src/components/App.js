@@ -7,14 +7,12 @@ class App extends React.Component{
     return(
         <div className="container-fluid">
            <Header/>
-            {this.props.children} {/*passing children that will receive props*/}
+            {this.props.children}
         </div>
     );
   }
 }
 
-// proptype validation
-// we expect to receive children
 App.propTypes = {
   children:PropTypes.array.isRequired
 };

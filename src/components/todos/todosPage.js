@@ -19,10 +19,8 @@ class TodosPage extends React.Component{
 
     onTitleChange(event){
         const todo = this.state.todo;
-        console.log('todos: ',todo);
         todo.title = event.target.value;
         this.setState({todo:todo});
-        console.log('this.state: ',this.state);
     }
 
     onClickSave(){
@@ -61,7 +59,7 @@ TodosPage.propTypes={
 
 function mapStateToProps(state, ownProps){
     return{
-        todos:state.todos  //property from the courseReducer
+        todos:state.todos
     };
 }
 
