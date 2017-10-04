@@ -28,7 +28,12 @@ class TodosPage extends React.Component{
     }
 
     todoRow(todo, index){
-        return <div key={index}>{todo.title}</div>;
+        return <h1>
+                    <span className="label label-default"
+                  key={index}>
+                {todo.title}
+            </span>
+        </h1>;
     }
 
     render(){
@@ -38,15 +43,21 @@ class TodosPage extends React.Component{
                 {this.props.todos.map(this.todoRow)}
                 <h2>Add Todo</h2>
 
-                <input
-                    type="text"
-                    onChange={this.onTitleChange}
-                    value={this.state.todo.title} />
+                <div className="form-group">
+                    <label>Todos:</label>
+                    <input type="text"
+                           className="form-control"
+                           onChange={this.onTitleChange}
+                           value={this.state.todo.title}/>
+                </div>
 
-                <input
-                    type="submit"
-                    value="Save"
-                    onClick={this.onClickSave} />
+                <button type="button"
+                        className="btn btn-primary"
+                        value="Save"
+                        onClick={this.onClickSave}>
+                    Save
+                </button>
+
             </div>
         );
     }
